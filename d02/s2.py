@@ -33,16 +33,12 @@ scores = {
     }
 }
 
-def run():
+def run(inp):
     score = 0
 
-    with open('input.txt') as f:
-        for line in map(str.strip, f):
-            a, b = line.split(' ')
-            score += scores[b]
-            score += scores[a][b]
-    print(score)
+    for line in inp:
+        a, b = line.split(' ')
+        score += scores[b]
+        score += scores[a][b]
 
-if __name__ == '__main__':
-    run()
-
+    return score
